@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+<changeSet id="car_shop_insert" author="carShopUser">
+    <sql>INSERT INTO car_shop (id, car_name, car_model,price,photoUrl) VALUES (1, 'Porsche', 'Macan', 60000,'https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fporsche.drom.ru%2Fmacan%2F&amp;psig=AOvVaw2OmdanU1icMMBPhsEsiNUh&amp;ust=1710793652808000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBMQjRxqFwoTCPD7pJGR_IQDFQAAAAAdAAAAABAE');</sql>
+    <sql>INSERT INTO car_shop (id, car_name, car_model,price,photoUrl) VALUES (2, 'Porsche', '911', 120000,'https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fauto.ru%2Fcatalog%2Fcars%2Fporsche%2F911%2F&amp;psig=AOvVaw2VQQ_M3in4rdpPS2khBOWj&amp;ust=1710793632254000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBMQjRxqFwoTCMC4tIeR_IQDFQAAAAAdAAAAABAE');</sql>
+    <sql>INSERT INTO car_shop (id, car_name, car_model,price,photoUrl) VALUES (3, 'BMW', 'M5 Competition', 120000,'https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fwww.caranddriver.com%2Fbmw%2Fm5-2023&amp;psig=AOvVaw2hJh055MXV2g0x9Afizo-G&amp;ust=1710793701007000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBMQjRxqFwoTCJik4aqR_IQDFQAAAAAdAAAAABAE');</sql>
+    <sql>INSERT INTO car_shop (id, car_name, car_model,price,photoUrl) VALUES (4, 'BMW', 'M6', 100000,'https://www.google.com/url?sa=i&amp;amp;url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FBMW_M6&amp;psig=AOvVaw0JZYDzD37Z6SLZD7JYTmi-&amp;ust=1710793722731000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBMQjRxqFwoTCPC_-86R_IQDFQAAAAAdAAAAABAE');</sql>
+    <sql>INSERT INTO car_shop (id, car_name, car_model,price,photoUrl) VALUES (5, 'Mercedez-Benz', 'GLS 500', 170000,'https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fmb-bel.ru%2Fgls-class%2Fgls-500%2F&amp;psig=AOvVaw2LJcqEoat1_9Cf94nS7uA3&amp;ust=1710793803891000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBMQjRxqFwoTCLjEp9mR_IQDFQAAAAAdAAAAABAE');</sql>
+</changeSet>
+        </databaseChangeLog>

@@ -23,7 +23,7 @@
         <property name="hibernate.show_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hibernate.hbm2ddl.import_files">src/resources/db/migrations/changelog.xml</property>
+        <property name="hibernate.hbm2ddl.import_files">src/resources/db/db.migrations/db.changelog-master.xml</property>
 
         <property name="classpath">liquibase.ext.hibernate.database.HibernateDatabase</property>
 

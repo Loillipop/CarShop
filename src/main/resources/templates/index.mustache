@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Car Store</title>
+    <meta content="text/html" charset="UTF-8">
+    <style>
+        .car {
+            border: 1px solid black;
+            margin: 20px;
+            padding: 10px;
+            width: 200px;
+        }
+
+        .car img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome to our Car Store!</h1>
+<form action="/car" method="post">
+    <label for="name">Car name:</label><br>
+    <input type="text" id="car_name" name="car_name"><br>
+
+    <label for="price">Price:</label><br>
+    <input type="text" id="price" name="price"><br>
+
+    <label for="photoUrl">URL photo:</label><br>
+    <input type="text" id="photoUrl" name="photoUrl"><br>
+
+    <label for="model">Car model:</label><br>
+    <input type="text" id="car_model" name="car_model"><br>
+
+    <input type="submit" value="Add car">
+</form>
+{{#cars}}
+    <div class="bouquet">
+        <h2>{{name}}</h2>
+        <img src="{{photoUrl}}" alt="{{name}}"/>
+        <p>{{model}}</p>
+        <p>Price: {{price}}</p>
+    </div>
+{{/cars}}
+</body>
+</html>
