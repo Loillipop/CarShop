@@ -1,11 +1,12 @@
 package org.example.dao;
 
+import lombok.RequiredArgsConstructor;
 import org.example.config.HibernateConfig;
 import org.example.entity.Car;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
+@RequiredArgsConstructor
 public class CarDAO {
     private final HibernateConfig hibernateConfig;
     List<Car> cars = new ArrayList<>();

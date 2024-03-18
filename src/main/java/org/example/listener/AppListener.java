@@ -3,6 +3,7 @@ import lombok.SneakyThrows;
 import org.example.config.HibernateConfig;
 import org.example.config.LiquidBaseConfig;
 import org.example.dao.CarDAO;
+import org.hibernate.SessionFactory;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -16,11 +17,9 @@ public class AppListener implements ServletContextListener {
     @SneakyThrows
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         ServletContext ctx = servletContextEvent.getServletContext();
-
-        LiquidBaseConfig.setupLiquibase().migrate();
-
         HibernateConfig hibernateDataSource = new HibernateConfig();
-        CarDAO carDAO = new CarDAO();
+        LiquidBaseConfig.setupLiquibase(hibernateDataSource.getConnection()).update();
+        CarDAO carDAO = new CarDAO(hibernateDataSource);
 
         ctx.setAttribute("hikariDataSource", hibernateDataSource);
         ctx.setAttribute("bouquetDAO", carDAO);
@@ -28,9 +27,11 @@ public class AppListener implements ServletContextListener {
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-        HibernateConfig ds = (HibernateConfig) servletContextEvent
+        SessionFactory sessionFactory = (SessionFactory) servletContextEvent
                 .getServletContext()
-                .getAttribute("hikariDataSource");
-        ds.close();
+                .getAttribute("hibernateSessionFactory");
+        if (sessionFactory != null && !sessionFactory.isClosed()) {
+            sessionFactory.close();
+        }
     }
 }
