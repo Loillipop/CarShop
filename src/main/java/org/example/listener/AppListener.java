@@ -21,8 +21,8 @@ public class AppListener implements ServletContextListener {
         LiquidBaseConfig.setupLiquibase(hibernateDataSource.getConnection()).update();
         CarDAO carDAO = new CarDAO(hibernateDataSource);
 
-        ctx.setAttribute("hikariDataSource", hibernateDataSource);
-        ctx.setAttribute("bouquetDAO", carDAO);
+        ctx.setAttribute("hibernateDataSource", hibernateDataSource);
+        ctx.setAttribute("carDAO", carDAO);
     }
 
     @Override

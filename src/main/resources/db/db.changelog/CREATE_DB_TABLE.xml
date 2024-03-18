@@ -10,10 +10,10 @@
         <column name="id" type="INT">
             <constraints primaryKey="true" nullable="false"/>
         </column>
-        <column name="car_name" type="VARCHAR(255)">
+        <column name="name" type="VARCHAR(255)">
             <constraints nullable="false"/>
         </column>
-        <column name="car_model" type="VARCHAR(255)">
+        <column name="model" type="VARCHAR(255)">
             <constraints nullable="false"/>
         </column>
         <column name="price" type="DECIMAL(10)">

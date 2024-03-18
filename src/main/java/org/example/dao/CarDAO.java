@@ -18,8 +18,8 @@ public class CarDAO {
             while (resultSet.next()) {
                 Car car = Car.builder()
                         .id(resultSet.getInt("id"))
-                        .name(resultSet.getString("car_name"))
-                        .model(resultSet.getString("car_model"))
+                        .name(resultSet.getString("name"))
+                        .model(resultSet.getString("model"))
                         .price(resultSet.getBigDecimal("price"))
                         .photoUrl(resultSet.getString("photoUrl"))
                         .build();
@@ -30,7 +30,7 @@ public class CarDAO {
     }
 
     public void addCars(Car car) throws SQLException {
-        String sql = "INSERT INTO car_shop (id, car_name, car_model,price,photoUrl) VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO car_shop (name, model,price,photoUrl) VALUES (?,?,?,?)";
         try (PreparedStatement statement = hibernateConfig.getConnection().prepareStatement(sql)) {
             statement.setString(1, car.getName());
             statement.setString(2, car.getModel());
