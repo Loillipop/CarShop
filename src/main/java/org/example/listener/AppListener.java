@@ -1,7 +1,11 @@
 package org.example.listener;
+
+import liquibase.Liquibase;
+import liquibase.database.jvm.JdbcConnection;
+import liquibase.resource.ClassLoaderResourceAccessor;
 import lombok.SneakyThrows;
 import org.example.config.HibernateConfig;
-import org.example.config.LiquidBaseConfig;
+import org.example.config.LiquibaseConfig;
 import org.example.dao.CarDAO;
 import org.hibernate.SessionFactory;
 
@@ -17,8 +21,14 @@ public class AppListener implements ServletContextListener {
     @SneakyThrows
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         ServletContext ctx = servletContextEvent.getServletContext();
+        LiquibaseConfig liquibaseConfig = new LiquibaseConfig();
+        Liquibase liquibase = new Liquibase(
+                "db/db.changelog/db.changelog-master.xml", // Путь к файлу changelog.xml
+                new ClassLoaderResourceAccessor(),
+                new JdbcConnection(liquibaseConfig.getConnection())
+        );
+        liquibase.update();
         HibernateConfig hibernateDataSource = new HibernateConfig();
-        LiquidBaseConfig.setupLiquibase(hibernateDataSource.getConnection()).update();
         CarDAO carDAO = new CarDAO(hibernateDataSource);
 
         ctx.setAttribute("hibernateDataSource", hibernateDataSource);

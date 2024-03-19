@@ -45,10 +45,10 @@ public class CarServlet extends HttpServlet {
 
     @SneakyThrows
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        String name = request.getParameter("car_model");
+        String name = request.getParameter("name");
         BigDecimal price = new BigDecimal(request.getParameter("price"));
         String photoUrl = request.getParameter("photoUrl");
-        String model = request.getParameter("car_model");
+        String model = request.getParameter("model");
 
         Car car = Car.builder()
                 .name(name)

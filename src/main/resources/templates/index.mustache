@@ -22,24 +22,24 @@
     <label for="name">Car name:</label><br>
     <input type="text" id="name" name="name"><br>
 
+    <label for="model">Car model:</label><br>
+    <input type="text" id="model" name="model"><br>
+
     <label for="price">Price:</label><br>
     <input type="text" id="price" name="price"><br>
 
     <label for="photoUrl">URL photo:</label><br>
     <input type="text" id="photoUrl" name="photoUrl"><br>
 
-    <label for="model">Car model:</label><br>
-    <input type="text" id="model" name="model"><br>
-
     <input type="submit" value="Add car">
 </form>
-{{#cars}}
+{{#car}}
     <div class="car">
         <h2>{{name}}</h2>
         <img src="{{photoUrl}}" alt="{{name}}"/>
         <p>{{model}}</p>
         <p>Price: {{price}}</p>
     </div>
-{{/cars}}
+{{/car}}
 </body>
 </html>

@@ -4,9 +4,9 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.7.xsd">
     <!-- Созднаие БД "car_shop" -->
-    <include file="/src/main/resources/db/db.changelog/CREATE_DB.xml"/>
+   <!-- <include file="db/db.changelog/CREATE_DB.xml"/> -->
     <!-- Созднаие таблицы "car_shop" -->
-    <include file="/src/main/resources/db/db.changelog/CREATE_DB_TABLE.xml"/>
+    <include file="/db/db.changelog/CREATE_DB_TABLE.xml"/>
     <!-- Вставка данных  в таблицу "car_shop" -->
-    <include file="/src/main/resources/db/db.changelog/INSERT_DATA_TO_TABLE.xml"/>
+    <include file="/db/db.changelog/INSERT_DATA_TO_TABLE.xml"/>
 </databaseChangeLog>
